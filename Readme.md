@@ -1,7 +1,7 @@
 # Pipeline to analyse POP-seq data 
 (From alignment to peak calling)
 
-![](./POPseq_Pipeline.jpg)
+![](./POP-seq_pipeline.png)
 
 **Figure 1:** The complete workflow of POP-seq protocol in K562 cells and data analysis (A) Cells were lysed using trizol to generate three phases (aqueous, interphase and organic phase). Cell lysates from the POP-seq variants are digested with RNase A/T1 mix, Proteinase K and DNase followed by r-RNA depletion, RNA quality check and library preparation for illumina sequencing (B) Workflow for POP-seq data processing and downstream analysis.
 
@@ -17,6 +17,10 @@ Bedtools (https://github.com/arq5x/bedtools2)
 Hisat (https://daehwankimlab.github.io/hisat2/)
 
 Piranha (http://smithlabresearch.org/software/piranha/) (from The Smith lab)
+
+## Data-set public access:
+	UCSC-genome-browser: https://genome.ucsc.edu/s/Rajneesh/POP-seq-peaks_with_total_RNA_and_ENCODE-eCLIPs 
+	Gene Expression Omnibus (GEO): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142460
 
 # Major steps involved in data processing
 STEP 1: Download the raw sequencing data (FASTQ files) in local directory

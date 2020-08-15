@@ -1,5 +1,4 @@
-# Pipeline to analyse POP-seq data 
-(From alignment to peak calling)
+# Pipeline to analyse POP-seq data (_From alignment to peak calling_)
 
 ![](./POP-seq_pipeline.png)
 
@@ -19,8 +18,10 @@ Hisat (https://daehwankimlab.github.io/hisat2/)
 Piranha (http://smithlabresearch.org/software/piranha/) (from The Smith lab)
 
 ## Data-set public access:
-	UCSC-genome-browser: https://genome.ucsc.edu/s/Rajneesh/POP-seq-peaks_with_total_RNA_and_ENCODE-eCLIPs 
-	Gene Expression Omnibus (GEO): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142460
+	
+UCSC-genome-browser: https://genome.ucsc.edu/s/Rajneesh/POP-seq-peaks_with_total_RNA_and_ENCODE-eCLIPs 
+
+Gene Expression Omnibus (GEO): https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142460
 
 # Major steps involved in data processing
 STEP 1: Download the raw sequencing data (FASTQ files) in local directory
@@ -91,3 +92,7 @@ STEP 5: Run piranha for peak calling from POP-seq data and identify binding peak
 	module load piranha-1.2.1						# load module available in cluster
 	cd ./Output/
 	./path/Piranha -l -s Rep1_sorted.bed -o output_Rep1_peaks.bed
+
+STEP 6: For any downstream comparison of POP-seq peaks with publically available eCLIP OR fRIP OR ribo-seq peaks, below code identifies the intersecting peaks with 50% base-to-base overlap.
+	
+	bedtools intersect -f 0.50 -r -a POP-seq_peaks.bed -b RBP_eCLIP.bed|sort -k1,1 -k2,2n|uniq > PoP-seq_intersect_peaks.bed     

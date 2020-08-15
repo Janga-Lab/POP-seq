@@ -95,4 +95,4 @@ STEP 5: Run piranha for peak calling from POP-seq data and identify binding peak
 
 STEP 6: For any downstream comparison of POP-seq peaks with publically available eCLIP OR fRIP OR ribo-seq peaks, below code identifies the intersecting peaks with 50% base-to-base overlap.
 	
-	bedtools intersect -f 0.50 -r -a POP-seq_peaks.bed -b RBP_eCLIP.bed|sort -k1,1 -k2,2n|uniq > PoP-seq_intersect_peaks.bed     
+	bedtools intersect -f 0.50 -r -a POP-seq_peaks.bed -b RBP_eCLIP.bed|sort -k1,1 -k2,2n|uniq > POP-seq_intersect_peaks.bed     

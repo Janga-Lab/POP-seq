@@ -59,7 +59,7 @@ Run Pipeline_POP-seq.py program as follows, to generate the multiple scripts (jo
   	-odir ODIR            output directory path (default:./)
 
 
-STEP 3: Align the high quality sequencing reads (from STEP 3) onto human reference genome (hg38) using Hisat (check your aligner!).
+STEP 3: Align the high quality sequencing reads (from STEP 2) onto human reference genome (hg38) using Hisat (check your aligner!).
 This includes two sub-steps:
 
 	module load hisat/0.1.6        						# load module available in cluster/ machine
